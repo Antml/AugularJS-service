@@ -1,0 +1,51 @@
+<h3 class="text-center"><span class="glyphicon glyphicon-shopping-cart ">我的购物车</span></h3>
+
+<div  ng-show="cartItems"  >
+<div class="panel panel-default" >
+    <div class="panel-heading text-center"></div>
+    <div class="panel-body">
+        <div class="row text-center">
+            <div class="col-md-3 "><label>名称</label></div>
+
+            <div class="col-md-2"><label>单价（元）</label></div>
+
+            <div class="col-md-2"><label>单位</label></div>
+            <div class="col-md-3"><label>数量</label></div>
+
+            <div class="col-md-2"><label>小计</label></div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="row text-center" ng-repeat="cartItem in cartItems" >
+
+
+            <div class="col-md-3"><span id="cart_1_name">{{cartItem.item.name}}</span></div>
+            <div class="col-md-2"><span id="cart_1_price"> {{cartItem.item.price}}</span></div>
+            <div class="col-md-2"><span id="cart_1_price"> {{cartItem.item.unit}}</span></div>
+
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default dowm_button" type="button" name="down_button" ng-click="downCart_Num(cartItem)">-</button>
+                    </span>
+                    <span class="form-control show_num">{{cartItem.quantity}}</span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default up_button" type="button" ng-click="upCart_Num(cartItem)">+</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2"><span name="cart_everyTotal">{{cartItem.quantity*cartItem.item.price}}</span>元</div>
+            <!-- <div class="col-md-1"><button class="delete_button_'+group+'"><span name="cart_everyRemove" class="glyphicon glyphicon-trash" ></span></button></div> -->
+</div>
+<div class="panel-heading text-center"></div>
+<div class="panel-heading text-center"></div>
+<div class="panel-heading text-center"></div>
+<div class="panel-heading text-center"></div>
+<div class='text-center'>
+  <p>总价格:{{price}}</p>
+</div>
+<div class='text-center' >
+  <button class="btn btn-lg btn-primary btn-shadow text-center" ng-click='changetopay()'>立即结算</button>
+</div>

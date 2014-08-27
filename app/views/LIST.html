@@ -1,0 +1,39 @@
+
+<div class="jumbotron masthead">
+    <div class="container text-center ">
+        <h1 class="text-center ">来此购宇宙购物商城</h1>
+        <h2 class="text-center ">宇宙价格最低质量最好货物清单</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+
+<div>
+<table id="items" class="table table-bordered text-center" border="100">
+    <tr class="active">
+        <td><label>商品</label></td>
+        <td><label>类别</label></td>
+        <td><label>价格（元）</label></td>
+        <td><label>单位</label></td>
+        <td><label>操作</label></td>
+        </tr>
+
+    <tr class="warning good" data-price="sprite" ng-repeat="item in items" >
+        <td >{{item.name}}</td>
+        <td >{{item.category}}</td>
+        <td >{{item.price}}</td>
+        <td >{{item.unit}}</td>
+        <td ><button class="buy" id="{{item.name}}" ng-click='getItem(item)'>  <span class="glyphicon glyphicon-hand-up"><span>{{BuyNow}}</button></td>
+
+</table>
+    <div class="text-center">
+
+        </div>
+</div>
+    <!-- <div>
+        <span><a class="btn btn-lg btn-primary btn-shadow text-center" href="#/cart" target="_blank" role="button">查看购物车</a></span>
+        </div> -->

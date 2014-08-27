@@ -1,0 +1,57 @@
+
+<div class="container">
+    <div >
+        <form class="form-inline text-center" role="form">
+            <div class="form-group has-success has-feedback ">
+                <label class="control-label" for="inputSuccess4">请填写正确的收货地址：</label>
+                <input type="text" class="form-control" id="inputSuccess4">
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <div>&nbsp; </div>
+            <div>&nbsp; </div>
+            <div>&nbsp; </div>
+            <div>&nbsp; </div>
+            <div>&nbsp; </div>
+
+
+        </form>
+        <h3 >您本次购买的商品有:<h3>
+
+<div  ng-show="cartItems"  >
+<div class="panel panel-default" >
+
+    <div class="panel-body">
+        <div class="row text-center">
+            <div class="col-md-3 "><label>名称</label></div>
+
+            <div class="col-md-2"><label>单价（元）</label></div>
+
+            <div class="col-md-2"><label>单位</label></div>
+            <div class="col-md-3"><label>数量</label></div>
+
+            <div class="col-md-2"><label>小计</label></div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="row text-center" ng-repeat="cartItem in cartItems" >
+
+
+            <div class="col-md-3"><span id="cart_1_name">{{cartItem.item.name}}</span></div>
+            <div class="col-md-2"><span id="cart_1_price"> {{cartItem.item.price}}</span></div>
+            <div class="col-md-2"><span id="cart_1_price"> {{cartItem.item.unit}}</span></div>
+
+            <div class="col-md-3"><span id="cart_1_price"> {{cartItem.quantity}}</span></div>
+
+
+            <div class="col-md-2"><span name="cart_everyTotal">{{cartItem.quantity*cartItem.item.price}}</span>元</div>
+            <!-- <div class="col-md-1"><button class="delete_button_'+group+'"><span name="cart_everyRemove" class="glyphicon glyphicon-trash" ></span></button></div> -->
+</div>
+<div class="panel-heading text-center"></div>
+<div class="panel-heading text-center"></div>
+<div class="panel-heading text-center"></div>
+<div class="panel-heading text-center"></div>
+<div class='text-center'>
+  <p>总价格:{{price}}</p>
+</div>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script src="lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <!--<script src="try.js"></script>-->
+    <!--<script src="assist.js"></script>-->
+    <script src="items.js"></script>
+    <script src="cart-items.js"></script>
+    <script src="changecartcount.js"></script>
+    <!--<script src="LocalStorage.js"></script>-->
+    <!--<script src="main.js"></script>-->
+
+
+    <!--<script src="main.js"></script>-->
+<title>商品列表</title>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-inverse" role="navigation" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class=navbar-brand"><a href="LIST.html">List</a></li>
+
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="cart.html" class="dropdown-toggle" data-toggle="dropdown">Cart(<span class="NUM"></span>)</a>
+
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="jumbotron masthead">
+    <div class="container text-center ">
+        <h1 class="text-center ">来此购宇宙购物商城</h1>
+        <h2 class="text-center ">宇宙价格最低质量最好货物清单</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+
+<div>
+<table id="items" class="table table-bordered text-center" border="100">
+    <tr class="active">
+        <td><label>商品</label></td>
+        <td><label>价格（元）</label></td>
+        <td><label>单位</label></td>
+        <td><label>操作</label></td>
+        </tr>
+    <tr class="warning good" data-price="sprite" >
+        <td>雪碧</td>
+        <td>3.00</td>
+        <td>罐</td>
+        <td><button class="buy" id="雪碧">立即购买</button></td>
+    </tr>
+    <tr class="info good" data-price="lichee">
+        <td>荔枝</td>
+    <td>15.00</td>
+    <td>斤</td>
+        <td><button class="buy" id="荔枝">立即购买</button></td>
+    </tr>
+    <tr class="active good" >
+        <td>电池</td>
+        <td>2.00</td>
+        <td>个</td>
+        <td><button class="buy" id="电池">立即购买</button></td>
+    </tr>
+    <tr class="success good">
+        <td>苹果</td>
+        <td>5.50</td>
+        <td>斤</td>
+        <td><button class="buy"  id="苹果">立即购买</button></td>
+    </tr>
+    <tr class="danger good" >
+        <td>方便面</td>
+        <td>4.50</td>
+        <td>袋</td>
+        <td><button class="buy" id="方便面">立即购买</button></td>
+    </tr>
+    <tr class="warning good" >
+        <td>洗发露</td>
+        <td>20.00</td>
+        <td>瓶</td>
+        <td><button class="buy" id="洗发露">立即购买</button></td>
+    </tr>
+</table>
+    <div class="text-center">
+    <button id="calculate">立即结算</button>
+        </div>
+</div>
+    <div>
+        <span><a class="btn btn-lg btn-primary btn-shadow text-center" href="cart.html" target="_blank" role="button">查看购物车</a></span>
+        </div>
+
+</body>
+</html>
