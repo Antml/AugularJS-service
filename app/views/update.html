@@ -1,0 +1,16 @@
+<div>
+  <h5>修改商品信息</h5>
+  <form class='well'>
+    <label>Category</label>
+    <input type='text' name ="category" ng-model='newItem.category'>
+    <label>Name</label>
+    <input type='text' name ="name" ng-model='newItem.name'>
+    <label>Price</label>
+    <input type='text' name ="price" ng-model='newItem.price'>
+    <label>Unit</label>
+    <input type='text' name ="unit" ng-model='newItem.unit'>
+    <br>
+    <input type='hidden' ng-model='newItem.id'>
+    <input type='button' value='Save' ng-click='updateItem()' class='btn btn-primary'>
+  </form>
+</div>
