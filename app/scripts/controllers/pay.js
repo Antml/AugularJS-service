@@ -1,10 +1,8 @@
 angular.module('zhangxiaoyunApp')
-  .controller('payCtrl', function ($scope,cart,pay,localStorageService) {
+  .controller('payCtrl', function ($scope, $location,pay) {
 
-  $scope.cartItems = localStorageService.get('cartItems');
-  $scope.price= cart.caculateTotal()+'元';
-
-  $scope.clearCartItems = function(){
-    pay.clearCartItems();
-  }
-});
+$scope.cartItems = Localstorage.getLocalstorage('cartItems');
+$scope.price= function (){
+  pay.caculateTotal();
+}
+  });
