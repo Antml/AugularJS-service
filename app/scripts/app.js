@@ -15,13 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'LocalStorageModule'
-    // 'lodash'
+    'ngTouch'
   ])
-  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
-    localStorageServiceProvider.setPrefix('ls');
-  }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -47,22 +42,6 @@ angular
       .when('/pay', {
         templateUrl: 'views/pay.html',
         controller: 'payCtrl'
-      })
-      .when('/goodsmanage', {
-        templateUrl: 'views/goodsmanage.html',
-        controller: 'contactCtrl'
-      })
-      .when('/update', {
-        templateUrl: 'views/update.html',
-        controller: 'updateCtrl'
-      })
-      .when('/category', {
-        templateUrl: 'views/category.html',
-        controller: 'categoryCtrl'
-      })
-      .when('/updateCategory', {
-        templateUrl: 'views/updateCategory.html',
-        controller: 'updateCategoryCtrl'
       })
       .otherwise({
         redirectTo: '/'
