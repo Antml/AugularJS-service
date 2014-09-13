@@ -19,14 +19,15 @@ angular.module('zhangxiaoyunApp')
     $scope.cartItems = localStorageService.get('cartItems');
     $scope.$parent.quantity = cart.generateQuantity();
     $scope.price= cart.caculateTotal();
-
   };
+
   $scope.upCart_Num = function(item){
     cart.upCart_Num(item);
     $scope.cartItems = localStorageService.get('cartItems');
     $scope.$parent.quantity = cart.generateQuantity();
     $scope.price= cart.caculateTotal();
   };
+  
   $scope.changetopay=function(){
     $location.path('pay');
 };

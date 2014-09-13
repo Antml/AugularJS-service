@@ -7,10 +7,17 @@ angular.module('zhangxiaoyunApp')
     contactService.removeItem(name);
     $scope.items = localStorageService.get('items');
   };
-  $scope.saveItem = function(category,name,price,unit){
+  $scope.saveItem = function(newItem){
     // $scope.newItem = {id:0,category:category,name:name,price:price,unit:unit};
     // $scope.newItem.id = category
-    $scope.items = contactService.saveItem($scope.newItem);
+    // $scope.items = contactService.saveItem($scope.newItem);
+    // $scope.newItem = {};
+    var items = contactService.set();
+    var item = {id:0,category:newItem.category,name:newItem.name,price:newItem.price,unit:newItem.unit};
+    item.id = items[items.length-1].id + 1;
+    items.push(item);
+    localStorageService.set('items',items);
+    $scope.items =contactService.set();
     $scope.newItem = {};
   };
   $scope.updateclick = function(name){

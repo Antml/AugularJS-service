@@ -1,6 +1,4 @@
-<div>
-<h2 class='text-center'>分类管理</h2>
-</div>
+
 
 <div >
 Search:<input type='text' ng-model='search' >
@@ -20,7 +18,7 @@ Search:<input type='text' ng-model='search' >
           <td><label>操作</label></td>
           </tr>
 
-      <tr class="warning good" data-price="sprite" ng-repeat="category in categories" | filter:search >
+      <tr class="warning good" data-price="sprite" ng-repeat="category in categories | filter:search">
           <td >{{category.name}}</td>
           <td><button class="btn btn-default up_button" type="button" ng-click="removeCategory(category)">delete</button>|<button class="btn btn-default up_button" type="button" ng-click="updateClick(category.id)">修改</button></td>
 </tr>

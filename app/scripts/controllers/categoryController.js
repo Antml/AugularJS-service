@@ -7,10 +7,10 @@ angular.module('zhangxiaoyunApp')
       $scope.categories =categoryService.getCategories();
     }
     $scope.addCategory = function(name){
-      $scope.newCategory = {id:0,name:name};
+      var newCategory = {id:0,name:name};
       var categories = categoryService.getCategories();
-      $scope.newCategory.id = categories[categories.length-1].id + 1;
-      categories.push($scope.newCategory);
+      newCategory.id = categories[categories.length-1].id + 1;
+      categories.push(newCategory);
       localStorageService.set('categories',categories);
       $scope.categories =categoryService.getCategories();
       $scope.newCategory = {};

@@ -42,7 +42,7 @@ angular.module('zhangxiaoyunApp')
           };
 
         this.getUser = function (cartItems, code) {
-
+          
               for (var i = 0; i < cartItems.length; i++) {
                   if (code === cartItems[i].item.name) {
                       //cartitem = cartItems[i];

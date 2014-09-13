@@ -6,9 +6,9 @@
   <div>
   <form class='well text-center'>
     <label>Category</label>
-    <input type='text' name ="category" ng-model='newItem.category'>
-          <!-- <select class="form-control" ng-model="addproduct.category">
-        <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option> -->
+    <!-- <input type='text' name ="category" ng-model='newItem.category'> -->
+          <select class="form-control" ng-model="newItem.category">
+        <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
     <label>Name</label>
     <input type='text' name ="name" ng-model='newItem.name'>
     <label>Price</label>
@@ -17,7 +17,7 @@
     <input type='text' name ="unit" ng-model='newItem.unit'>
     <br>
     <input type='hidden' ng-model='newItem.id'>
-    <input type='button' value='添加商品' ng-click='saveItem(category.name,newItem)' class='btn btn-primary'>
+    <input type='button' value='添加商品' ng-click='saveItem(newItem)' class='btn btn-primary'>
   </form>
   </div>
     <div>
