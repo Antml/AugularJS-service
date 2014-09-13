@@ -51,19 +51,19 @@ angular.module('zhangxiaoyunApp')
       //     }
       //   }
       // }
-      this.get = function(name){
+      this.get = function(id){
         var items = localStorageService.get('items');
         for (i=0;i<items.length;i++){
-          if(items[i].name==name){
+          if(items[i].id==id){
             return items[i];
           }
         }
       }
       this.updateItems = function(input){
         var items = localStorageService.get('items');
-        var info = input.name;
+        var info = input.id;
         for (var i=0;i<items.length;i++){
-          if(items[i].name ===info){
+          if(items[i].id ===info){
             items[i] = input;
           }
         }

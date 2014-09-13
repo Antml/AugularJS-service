@@ -20,8 +20,8 @@ angular.module('zhangxiaoyunApp')
     $scope.items =contactService.set();
     $scope.newItem = {};
   };
-  $scope.updateclick = function(name){
+  $scope.updateclick = function(id){
     $location.path('update');
-    $location.search({'name':name});
+    $location.search({'id':id});
   };
 });

@@ -1,7 +1,7 @@
 angular.module('zhangxiaoyunApp')
   .controller('updateCtrl', function ($scope,$location,localStorageService,contactService) {
-  var name = $location.search().name;
-  $scope.newItem = contactService.get(name);
+  var id = $location.search().id;
+  $scope.newItem = contactService.get(id);
 
   $scope.updateItem = function(){
     contactService.updateItems($scope.newItem);
