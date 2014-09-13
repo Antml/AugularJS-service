@@ -7,5 +7,6 @@ angular.module('zhangxiaoyunApp')
   $scope.clearCartItems = function(){
     pay.clearCartItems();
     $scope.quantity = cart.generateQuantity();
+    $scope.cartItems = localStorageService.get('cartItems');
   }
 });
