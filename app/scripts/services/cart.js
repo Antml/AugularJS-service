@@ -1,9 +1,9 @@
 angular.module('zhangxiaoyunApp')
-    .service('cart',function(){
+    .service('cart',function(localStorageService){
 
       this.caculateTotal = function(){
         var total = 0;
-        var cartItems =Localstorage.getLocalstorage('cartItems');
+        var cartItems =localStorageService.get('cartItems');
         if (!cartItems){
         cartItems = [];
         }
@@ -14,28 +14,29 @@ angular.module('zhangxiaoyunApp')
           return total;
       };
 
-      this.upCart_Num = function(cartItem){
-        var cartItems = Localstorage.getLocalstorage("cartItems");
+      this.upCart_Num = function(item){
+        var cartItems = localStorageService.get("cartItems");
             if (!cartItems){
               cartItems = [];
             }
               for(var i=0; i<cartItems.length; i++){
-                  if(cartItems[i].item.name === cartItem.item.name){
+                  if(cartItems[i].item.name === item.name){
                       cartItems[i].quantity++;
                   }
               }
 
-          Localstorage.setLocalstorage("cartItems", cartItems);
+          localStorageService.set("cartItems", cartItems);
+          return cartItems;
 
         };
 
-      this.downCart_Num = function (cartItem){
-          var cartItems = Localstorage.getLocalstorage("cartItems");
+      this.downCart_Num = function (item){
+          var cartItems = localStorageService.get("cartItems");
               if (!cartItems){
                 cartItems = [];
               }
                 for(var i=0; i<cartItems.length; i++){
-                    if(cartItems[i].item.name === cartItem.item.name){
+                    if(cartItems[i].item.name === item.name){
                       if (cartItems[i].quantity > 0){
                         cartItems[i].quantity--;
                       }
@@ -45,16 +46,17 @@ angular.module('zhangxiaoyunApp')
                             return num.quantity ===0;
 
                           })
-                        _.without(cartItems,cartItems[i]);
+                        // _.without(cartItems,cartItems[i]);
                       }
 
                     }
                   }
-                  Localstorage.setLocalstorage("cartItems", cartItems);
+                  localStorageService.set("cartItems", cartItems);
+                  return cartItems;
                }
 
      this.generateQuantity = function(){
-        var cartItems = Localstorage.getLocalstorage('cartItems');
+        var cartItems = localStorageService.get('cartItems');
         if (!cartItems){
           cartItems = [];
         }

@@ -44,6 +44,12 @@
                     <li class="dropdown">
                         <a href="#/cart" class="dropdown-toggle" data-toggle="dropdown">Cart(<span class="NUM">{{quantity}}</span>)</a>
                     </li>
+                    <li class="dropdown">
+                        <a href="#/goodsmanage" class="dropdown-toggle" data-toggle="dropdown">商品管理</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#/category" class="dropdown-toggle" data-toggle="dropdown">分类管理</a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -82,13 +88,15 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/model/items.js"></script>
         <script src="scripts/model/cart-items.js"></script>
-        <script src="scripts/model/LocalStorage.js"></script>
+        <!-- //  <script src="scripts/model/LocalStorage.js"></script> -->
 
         <script src="scripts/app.js"></script>
 
@@ -99,9 +107,15 @@
         <script src="scripts/controllers/cart.js"></script>
         <script src="scripts/controllers/index.js"></script>
         <script src="scripts/controllers/pay.js"></script>
-        <script src="scripts/services/1.js"></script>
-        <script src="scripts/services/2.js"></script>
-        <script src="scripts/services/3.js"></script>
+        <script src="scripts/services/cart.js"></script>
+        <script src="scripts/services/List.js"></script>
+        <script src="scripts/services/pay.js"></script>
+        <script src="scripts/controllers/contactController.js"></script>
+        <script src="scripts/services/contactService.js"></script>
+        <script src="scripts/controllers/updateController.js"></script>
+        <script src="scripts/services/categoryService.js"></script>
+        <script src="scripts/controllers/categoryController.js"></script>
+        <script src="scripts/controllers/updateCategoryController.js"></script>
 
         <script src="styles/lodash-2.4.1/lodash.compat.js"></script>
         <script src="styles/lodash-2.4.1/lodash.js"></script>

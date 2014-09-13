@@ -8,26 +8,26 @@
  * Controller of the zhangxiaoyunApp
  */
 angular.module('zhangxiaoyunApp')
-    .controller('cartCtrl', function ($scope, $location,cart) {
+    .controller('cartCtrl', function ($scope, $location,cart,localStorageService) {
 
-    $scope.cartItems = Localstorage.getLocalstorage('cartItems');
-    $scope.price= cart.caculateTotal();
+    $scope.cartItems = localStorageService.get('cartItems');
+    $scope.price= cart.caculateTotal()+'元';
 
 
-  $scope.downCart_Num = function(cartItem){
-    cart.downCart_Num(cartItem);
-    $scope.cartItems = Localstorage.getLocalstorage('cartItems');
+  $scope.downCart_Num = function(item){
+    cart.downCart_Num(item);
+    $scope.cartItems = localStorageService.get('cartItems');
     $scope.$parent.quantity = cart.generateQuantity();
     $scope.price= cart.caculateTotal();
 
   };
-  $scope.upCart_Num = function(cartItem){
-    cart.upCart_Num(cartItem);
-    $scope.cartItems = Localstorage.getLocalstorage('cartItems');
-      $scope.$parent.quantity = cart.generateQuantity();
-      $scope.price= cart.caculateTotal();
+  $scope.upCart_Num = function(item){
+    cart.upCart_Num(item);
+    $scope.cartItems = localStorageService.get('cartItems');
+    $scope.$parent.quantity = cart.generateQuantity();
+    $scope.price= cart.caculateTotal();
   };
-$scope.changetopay=function(){
-  $location.path('pay');
+  $scope.changetopay=function(){
+    $location.path('pay');
 };
   });
