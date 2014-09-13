@@ -5,5 +5,6 @@ angular.module('zhangxiaoyunApp')
     $scope.updateCategory = function(){
       categoryService.updateCategory($scope.newCategory);
       $scope.newCategory = {};
+      alert('修改成功！');
     }
 });

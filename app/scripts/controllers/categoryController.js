@@ -14,6 +14,7 @@ angular.module('zhangxiaoyunApp')
       localStorageService.set('categories',categories);
       $scope.categories =categoryService.getCategories();
       $scope.newCategory = {};
+      alert('添加成功！');
     }
     $scope.updateClick = function(id){
       $location.path('updateCategory');

@@ -19,6 +19,7 @@ angular.module('zhangxiaoyunApp')
     localStorageService.set('items',items);
     $scope.items =contactService.set();
     $scope.newItem = {};
+    alert('添加成功');
   };
   $scope.updateclick = function(id){
     $location.path('update');

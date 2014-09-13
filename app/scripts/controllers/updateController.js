@@ -6,5 +6,6 @@ angular.module('zhangxiaoyunApp')
   $scope.updateItem = function(){
     contactService.updateItems($scope.newItem);
     $scope.newItem = {};
+    alert('修改成功！');
   };
 });
